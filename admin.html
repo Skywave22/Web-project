@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Admin Panel</h2>
+        <div>
+            <a href="admin.html">Home</a>
+            <a href="index.html">User Panel</a>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+
+        <div id="msg"></div>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <div class="stat-box">
+                <h4>Total</h4>
+                <p id="totalCount">0</p>
+            </div>
+            <div class="stat-box">
+                <h4>Jobs</h4>
+                <p id="jobsCount">0</p>
+            </div>
+            <div class="stat-box">
+                <h4>Internship</h4>
+                <p id="internCount">0</p>
+            </div>
+        </div>
+
+        <form id="adminForm">
+            <h3 id="formTitle">Add New Listing</h3>
+
+            <input type="hidden" id="jobId">
+
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-control" placeholder="e.g. Web Developer">
+            <div class="error-text text-danger" id="titleErr">Title is required.</div>
+
+            <label for="company" class="form-label mt-3">Company</label>
+            <input type="text" id="company" class="form-control" placeholder="e.g. Google">
+            <div class="error-text text-danger" id="companyErr">Company is required.</div>
+
+            <label for="location" class="form-label mt-3">Location</label>
+            <input type="text" id="location" class="form-control" placeholder="e.g. Karachi">
+            <div class="error-text text-danger" id="locationErr">Location is required.</div>
+
+            <label for="category" class="form-label mt-3">Category</label>
+            <select id="category" class="form-select">
+                <option value="">Select Category</option>
+                <option value="Job">Job</option>
+                <option value="Internship">Internship</option>
+            </select>
+            <div class="error-text text-danger" id="categoryErr">Please select a category.</div>
+
+            <label for="salary" class="form-label mt-3">Salary (PKR per month)</label>
+            <input type="number" id="salary" class="form-control" placeholder="e.g. 50000">
+            <div class="error-text text-danger" id="salaryErr">Enter a valid salary (greater than 0).</div>
+
+            <label for="deadline" class="form-label mt-3">Application Deadline</label>
+            <input type="date" id="deadline" class="form-control">
+            <div class="error-text text-danger" id="deadlineErr">Please select a valid future date.</div>
+
+            <label for="status" class="form-label mt-3">Status</label>
+            <select id="status" class="form-select">
+                <option value="active">Active (visible to users)</option>
+                <option value="hidden">Hidden (admin only)</option>
+            </select>
+
+            <br>
+            <button type="submit" class="btn btn-primary" id="saveBtn">Save</button>
+            <button type="button" class="btn btn-secondary ms-2" id="cancelBtn">Cancel</button>
+        </form>
+
+        <hr>
+
+        <h3>All Listings</h3>
+
+        <table class="table table-striped table-hover mt-3">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Category</th>
+                    <th>Salary</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

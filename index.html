@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jobs & Internships Board</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Jobs & Internships Board</h2>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="admin.html">Admin Panel</a>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+
+        <div id="msg"></div>
+
+        <form id="submitForm">
+            <h3>Post a New Job or Internship</h3>
+
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" class="form-control mt-3" placeholder="e.g. Web Developer">
+            <div class="error-text text-danger" id="titleErr">Title is required.</div>
+
+            <label for="company" class="form-label mt-3">Company</label>
+            <input type="text" id="company" class="form-control" placeholder="e.g. Google">
+            <div class="error-text text-danger" id="companyErr">Company is required.</div>
+
+            <label for="location" class="form-label mt-3">Location</label>
+            <input type="text" id="location" class="form-control" placeholder="e.g. Karachi">
+            <div class="error-text text-danger" id="locationErr">Location is required.</div>
+
+            <label for="category" class="form-label mt-3">Category</label>
+            <select id="category" class="form-select">
+                <option value="">Select Category</option>
+                <option value="Job">Job</option>
+                <option value="Internship">Internship</option>
+            </select>
+            <div class="error-text text-danger" id="categoryErr">Please select a category.</div>
+
+            <label for="salary" class="form-label mt-3">Salary (PKR per month)</label>
+            <input type="number" id="salary" class="form-control" placeholder="e.g. 50000">
+            <div class="error-text text-danger" id="salaryErr">Enter a valid salary (greater than 0).</div>
+
+            <label for="deadline" class="form-label mt-3">Application Deadline</label>
+            <input type="date" id="deadline" class="form-control">
+            <div class="error-text text-danger" id="deadlineErr">Please select a valid future date.</div>
+
+            <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        </form>
+
+        <div class="filter-row row g-3 align-items-center mb-4">
+            <div class="col-auto">
+                <label for="search" class="col-form-label">Search:</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="search" class="form-control" placeholder="Search by title, company...">
+            </div>
+
+            <div class="col-auto">
+                <label for="filter" class="col-form-label">Filter:</label>
+            </div>
+            <div class="col-auto">
+                <select id="filter" class="form-select">
+                    <option value="All">All</option>
+                    <option value="Job">Jobs</option>
+                    <option value="Internship">Internships</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="list"></div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

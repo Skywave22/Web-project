@@ -1,0 +1,23 @@
+{
+  "jobs": [
+    {
+      "id": "2",
+      "title": "Junior Developer",
+      "company": "Code House",
+      "location": "Karachi",
+      "category": "Job",
+      "salary": "50000",
+      "deadline": "2026-07-30"
+    },
+    {
+      "title": "Senior UI Engineer",
+      "company": "Design Studio",
+      "location": "Islamabad",
+      "category": "Job",
+      "salary": "120000",
+      "deadline": "2026-08-30",
+      "status": "active",
+      "id": "v9mq8oOxDeU"
+    }
+  ]
+}
